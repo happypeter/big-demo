@@ -21208,12 +21208,22 @@
 	  }
 
 	  _createClass(Header, [{
+	    key: 'getStyles',
+	    value: function getStyles() {
+	      return {
+	        root: {
+	          backgroundColor: '#00bcd4',
+	          height: '200px'
+	        }
+	      };
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-
+	      var styles = this.getStyles();
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { style: styles.root },
 	        'header'
 	      );
 	    }
@@ -21258,12 +21268,22 @@
 	  }
 
 	  _createClass(Footer, [{
+	    key: 'getStyles',
+	    value: function getStyles() {
+	      return {
+	        root: {
+	          backgroundColor: '#212121',
+	          height: '200px'
+	        }
+	      };
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
-
+	      var styles = this.getStyles();
 	      return _react2.default.createElement(
 	        'div',
-	        null,
+	        { style: styles.root },
 	        'Footer'
 	      );
 	    }
