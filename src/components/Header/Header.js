@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Hamburger from './Hamburger';
 
 class Header extends Component {
   getStyles() {
@@ -13,7 +14,7 @@ class Header extends Component {
     const styles = this.getStyles();
     return (
       <div style={styles.root}>
-        header
+        <Hamburger />
       </div>
     );
   }
