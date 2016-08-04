@@ -11,7 +11,8 @@ class GithubAccount extends Component {
     super(props);
     this.state = {
       user: {},
-      repos: {}
+      repos: {},
+      wait: true
     };
   }
   componentDidMount() {
@@ -19,7 +20,8 @@ class GithubAccount extends Component {
       .then((data) => {
         this.setState({
           user: data.user,
-          repos: data.repos
+          repos: data.repos,
+          wait: false
         });
       });
   }
@@ -37,6 +39,7 @@ class GithubAccount extends Component {
     return(
       <div className='account'>
         <Card className="content">
+          {this.state.wait ? <p>Reading Data from Github...</p> : ''}
           { GitHubInfo }
         </Card>
       </div>
