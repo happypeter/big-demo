@@ -8,9 +8,10 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 // http://stackoverflow.com/a/34015469/988941
 injectTapEventPlugin();
 
-import Header from './components/Header/Header.js';
-import Footer from './components/Footer.js';
-import List from './components/List/List.js';
+import Header from './components/Header/Header';
+import Footer from './components/Footer';
+import List from './components/List/List';
+import GithubAccount from './components/GithubAccount/GithubAccount';
 
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
     return(
       <div>
         <Header />
+        <GithubAccount />
         <List />
         <Footer />
       </div>
