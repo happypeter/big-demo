@@ -9,8 +9,13 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader'
+        test: /\.jsx?$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style', 'css']
       }
     ]
   }

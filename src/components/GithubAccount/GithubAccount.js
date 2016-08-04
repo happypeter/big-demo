@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Card} from 'material-ui/Card';
-import RaisedButton from 'material-ui/RaisedButton';
 import isEmpty from 'lodash/isEmpty';
 import UserInfo from './UserInfo';
 import Repos from './Repos';
@@ -31,10 +30,6 @@ class GithubAccount extends Component {
         <div>
           <UserInfo userInfo={this.state.user} />
           <Repos repos={this.state.repos} />
-          <RaisedButton
-            style={{display: 'block', margin: '0 auto', width: '180px'}}
-            primary={true}
-            label="save" />
         </div>
       );
     }

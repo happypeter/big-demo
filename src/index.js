@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import './style/main.css';
+
 
 import injectTapEventPlugin from 'react-tap-event-plugin';
 
