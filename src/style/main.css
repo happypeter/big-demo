@@ -48,7 +48,7 @@ ul {
   flex-grow: 1;
   border-left: 1px solid rgba(0,0,0,0.1);
 }
-.account .user-info ul:first-child {
+.account .user-info ul li:first-child {
   border-left: none;
 }
 .account .user-info  span {
