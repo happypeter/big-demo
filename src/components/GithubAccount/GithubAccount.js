@@ -11,6 +11,7 @@ class GithubAccount extends Component {
     super(props);
     this.state = {
       user: {},
+      repos: {}
     };
   }
   componentDidMount() {
