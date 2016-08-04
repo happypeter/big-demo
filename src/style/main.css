@@ -1,3 +1,85 @@
+html {
+  font-family: sans-serif;
+  background-color: #fafafa;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: red;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #727272;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+
+.account {
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.account .content {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 40px;
+}
+
+.account .user-info img {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 30px auto;
+}
+.account .user-info ul {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+.account .user-info ul li {
+  flex-grow: 1;
+  border-left: 1px solid rgba(0,0,0,0.1);
+}
+.account .user-info ul:first-child {
+  border-left: none;
+}
+.account .user-info  span {
+  display: block;
+  font-size: 14px;
+}
+.account .user-info  b {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.account .user-repos {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.account .user-repos  li {
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.account .user-repos  li  div {
+  display: flex;
+  justify-content: space-between;
+}
+.account .user-repos li .name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #00bcd4;
+}
+.account .user-repos li  .desc {
+  font-size: 15px;
+}
+.account .user-repos li  .lang {
+  font-size: 14px;
 }
