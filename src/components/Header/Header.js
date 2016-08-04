@@ -1,20 +1,18 @@
 import React, { Component } from 'react';
-import Hamburger from './Hamburger';
+
+import AppBar from 'material-ui/AppBar';
+import AppLeftNav from './AppLeftNav'
 
 class Header extends Component {
-  getStyles() {
-     return {
-       root: {
-         backgroundColor: '#00bcd4',
-         height: '200px'
-       }
-     }
-   }
+  _onLeftIconButtonTouchTap() {
+    this.refs.LeftNav.handleToggle();
+  }
+
   render(){
-    const styles = this.getStyles();
     return (
-      <div style={styles.root}>
-        <Hamburger />
+      <div>
+        <AppLeftNav ref='LeftNav' />
+        <AppBar onLeftIconButtonTouchTap={this._onLeftIconButtonTouchTap.bind(this)}/>
       </div>
     );
   }
