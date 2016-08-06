@@ -43894,10 +43894,55 @@
 	  _createClass(Home, [{
 	    key: 'render',
 	    value: function render() {
+	      var styles = {
+	        root: {
+	          width: '100%',
+	          height: '100vh',
+	          background: 'url("https://raw.githubusercontent.com/happypeter/big-demo/gh-pages/img/newming24.jpg") no-repeat fixed center center/cover'
+	        },
+	        title: {
+	          color: '#fff',
+	          textAlign: 'center',
+	          paddingTop: '40vh',
+	          fontSize: '48px'
+	        },
+	        span: {
+	          color: '#00BCD4',
+	          fontSize: '36px'
+	        },
+	        cover: {
+	          width: '100%',
+	          height: '100%',
+	          backgroundColor: 'rgba(0,0,0,0.7)'
+	        }
+	      };
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        'Home'
+	        _react2.default.createElement(
+	          'div',
+	          { style: styles.root },
+	          _react2.default.createElement(
+	            'div',
+	            { style: styles.cover },
+	            _react2.default.createElement(
+	              'h1',
+	              { style: styles.title },
+	              '欢迎光临',
+	              _react2.default.createElement('br', null),
+	              _react2.default.createElement(
+	                'span',
+	                { style: styles.span },
+	                'PETER CORNER'
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'h1',
+	          { style: { color: '#777', textAlign: 'center', lineHeight: '90px' } },
+	          '我的个人作品'
+	        )
 	      );
 	    }
 	  }]);
