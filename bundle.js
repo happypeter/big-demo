@@ -48742,9 +48742,11 @@
 	    value: function componentDidMount() {
 	      var _this2 = this;
 
-	      var address = 'https://raw.githubusercontent.com/happypeter/big-demo/master/posts/index.json';
+	      // use math random to avoid browser cache
+	      var address = 'https://raw.githubusercontent.com/happypeter/big-demo/master/posts/index.json?v=' + Math.random();
 	      _axios2.default.get(address).then(function (res) {
 	        console.log(res);
+	        console.log(address);
 	        _this2.setState({
 	          posts: res.data
 	        });
