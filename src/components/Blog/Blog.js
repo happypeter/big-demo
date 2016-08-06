@@ -25,6 +25,7 @@ class List extends Component {
     // console.log(AllCards);
     return(
       <div>
+        <h1>Blog</h1>
         {blogCards}
       </div>
     )
