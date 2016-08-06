@@ -43,7 +43,8 @@ class AppLeftNav extends React.Component {
         lineHeight:'75px',
         fontSize:'20px',
         backgroundColor:'#00BCD4',
-        marginBottom:'10px'
+        marginBottom:'10px',
+        marginTop: '0'
       }
     }
     return (
@@ -54,7 +55,7 @@ class AppLeftNav extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})} >
           <div style={styles.menu}>
-            <p style={styles.navTitle} onClick={this.handleClose.bind(this)}>NEWMING@{this.state.title}</p>
+            <p style={styles.navTitle} onClick={this.handleClose.bind(this)}>Happypeter{this.state.title}</p>
             <MenuItem onTouchTap={this.handleClose.bind(this)}>
               <Link to="/" style={styles.link} activeStyle={{color: '#E91E63'}} onlyActiveOnIndex={true}>首页</Link>
             </MenuItem>
