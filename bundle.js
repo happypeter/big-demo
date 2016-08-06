@@ -48707,6 +48707,10 @@
 
 	var _map2 = _interopRequireDefault(_map);
 
+	var _axios = __webpack_require__(539);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
 	var _BlogCard = __webpack_require__(618);
 
 	var _BlogCard2 = _interopRequireDefault(_BlogCard);
@@ -48719,43 +48723,54 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var blogs = [{ index: '1', title: '这是第一天', date: '2016.7.19' }, { index: '2', title: '这是第二天', date: '2016.7.21' }, { index: '3', title: '这是第三天', date: '2016.7.22' }];
+	var Blog = function (_Component) {
+	  _inherits(Blog, _Component);
 
-	var List = function (_Component) {
-	  _inherits(List, _Component);
+	  function Blog() {
+	    _classCallCheck(this, Blog);
 
-	  function List() {
-	    _classCallCheck(this, List);
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Blog).call(this));
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(List).apply(this, arguments));
+	    _this.state = {
+	      posts: ''
+	    };
+	    return _this;
 	  }
 
-	  _createClass(List, [{
+	  _createClass(Blog, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      var _this2 = this;
+
+	      var address = 'https://raw.githubusercontent.com/happypeter/big-demo/master/posts/index.json';
+	      _axios2.default.get(address).then(function (res) {
+	        console.log(res);
+	        _this2.setState({
+	          posts: res.data
+	        });
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      // console.log(Cards.length);
 	      var blogCards = [];
 	      (0, _map2.default)(function (b) {
-	        blogCards.push(_react2.default.createElement(_BlogCard2.default, { title: b.title, date: b.date, index: b.index, key: Math.random() }));
-	      }, blogs);
+	        blogCards.push(_react2.default.createElement(_BlogCard2.default, { title: b.title, date: b.created_at, index: b.id, key: Math.random() }));
+	      }, this.state.posts);
 	      // console.log(AllCards);
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Blog'
-	        ),
 	        blogCards
 	      );
 	    }
 	  }]);
 
-	  return List;
+	  return Blog;
 	}(_react.Component);
 
-	exports.default = List;
+	exports.default = Blog;
 
 /***/ },
 /* 562 */
@@ -51887,7 +51902,7 @@
 
 	BlogCard.propTypes = {
 	  title: _react2.default.PropTypes.string.isRequired,
-	  index: _react2.default.PropTypes.string.isRequired,
+	  index: _react2.default.PropTypes.number.isRequired,
 	  date: _react2.default.PropTypes.string.isRequired
 	};
 
