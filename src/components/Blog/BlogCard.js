@@ -6,7 +6,7 @@ class BlogCard extends Component {
     this.context.router.push(`blog/${this.props.url}`);
   }
   render(){
-    console.log(this.context.router);
+    // console.log(this.context.router);
     let styles={
       root:{
         width:'80%',

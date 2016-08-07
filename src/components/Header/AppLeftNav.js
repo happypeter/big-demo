@@ -29,7 +29,7 @@ class AppLeftNav extends React.Component {
     this.setState({
       title:this.context.router.isActive('/', true) ? 'HOME' :
         this.context.router.isActive('/blog')? 'BLOG' :
-        this.context.router.isActive('/about')? 'ABOUT' : 'HOME'
+        this.context.router.isActive('/about')? 'ABOUT' : 'ITEM'
     });
   }
   render() {
