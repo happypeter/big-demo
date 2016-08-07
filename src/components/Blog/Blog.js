@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import map from 'lodash/fp/map';
+import CircularProgress from 'material-ui/CircularProgress';
 import axios from 'axios';
 
 import BlogCard from './BlogCard.js';
@@ -8,7 +9,8 @@ class Blog extends Component {
   constructor(){
     super();
     this.state={
-      posts: ''
+      posts: '',
+      wait: true
     }
   }
 
@@ -19,13 +21,19 @@ class Blog extends Component {
       console.log(res);
       console.log(address);
       this.setState({
-        posts: res.data
+        posts: res.data,
+        wait: false
       });
     });
   }
 
   render(){
-    // console.log(Cards.length);
+    let styles={
+      circle:{
+        textAlign:'center',
+        margin:'30px auto'
+      }
+    };
     var blogCards = [];
     map((b) =>  {
                   blogCards.push(
@@ -37,6 +45,7 @@ class Blog extends Component {
     // console.log(AllCards);
     return(
       <div>
+        {this.state.wait ? <div style={styles.circle}><CircularProgress size={1.5} /></div> : ''}
         {blogCards}
       </div>
     )
