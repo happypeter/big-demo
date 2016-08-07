@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import marked from 'marked';
+import hljs from 'highlight.js';
+
 
 
 class Post extends Component {
