@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import marked from 'marked';
 
 
 class Post extends Component {
@@ -23,10 +24,16 @@ class Post extends Component {
   }
 
   render(){
+    marked.setOptions({
+        highlight: function (code) {
+          return hljs.highlightAuto(code).value;
+        }
+      });
+    let content = marked(this.state.rawContent!='' ? this.state.rawContent : '请稍等......' );
     return(
       <div>
         { this.props.params.title }
-        { this.state.rawContent }
+        { content }
       </div>
     )
   }
