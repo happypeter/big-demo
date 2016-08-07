@@ -9,13 +9,29 @@ class AppLeftNav extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {open: false};
+    this.state = {
+      open: false,
+      title:''
+    };
   }
 
   handleToggle = () => this.setState({open: !this.state.open});
 
   handleClose = () => this.setState({open: false});
 
+  componentWillReceiveProps() {
+    this.setNavState();
+  }
+  componentDidMount(){
+    this.setNavState();
+  }
+  setNavState(){
+    this.setState({
+      title:this.context.router.isActive('/', true) ? 'HOME' :
+        this.context.router.isActive('/blog')? 'BLOG' :
+        this.context.router.isActive('/about')? 'ABOUT' : 'HOME'
+    });
+  }
   render() {
     let styles={
       menu:{
@@ -55,7 +71,7 @@ class AppLeftNav extends React.Component {
           open={this.state.open}
           onRequestChange={(open) => this.setState({open})} >
           <div style={styles.menu}>
-            <p style={styles.navTitle} onClick={this.handleClose.bind(this)}>Happypeter{this.state.title}</p>
+            <p style={styles.navTitle} onClick={this.handleClose.bind(this)}>{this.state.title}</p>
             <MenuItem onTouchTap={this.handleClose.bind(this)}>
               <Link to="/" style={styles.link} activeStyle={{color: '#E91E63'}} onlyActiveOnIndex={true}>首页</Link>
             </MenuItem>
@@ -72,4 +88,7 @@ class AppLeftNav extends React.Component {
   }
 }
 
+AppLeftNav.contextTypes = {
+  router: React.PropTypes.object.isRequired
+}
 export default AppLeftNav;
