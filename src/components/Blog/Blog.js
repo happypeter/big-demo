@@ -16,7 +16,7 @@ class Blog extends Component {
 
   componentDidMount(){
     // use math random to avoid browser cache
-    let address = `https://raw.githubusercontent.com/happypeter/big-demo/master/posts/index.json?v=${Math.random()}`
+    let address = `https://raw.githubusercontent.com/newming/big-demo/master/posts/index.json?v=${Math.random()}`
     axios.get(address).then((res) => {
       this.setState({
         posts: res.data,
@@ -35,7 +35,7 @@ class Blog extends Component {
     var blogCards = [];
     map((b) =>  {
         blogCards.push(
-          <BlogCard title={b.title} date={b.created_at } index={b.id} key={Math.random()}/>
+          <BlogCard title={b.title} date={b.created_at } index={b.id} url={b.name} key={Math.random()}/>
         );
       },
       this.state.posts
