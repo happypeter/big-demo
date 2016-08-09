@@ -11,7 +11,7 @@ class Post extends Component {
   }
   componentDidMount(){
     // use math random to avoid browser cache
-    let address = `https://raw.githubusercontent.com/newming/big-demo/master/posts/${this.props.params.title}.md?v=${Math.random()}`
+    let address = `https://raw.githubusercontent.com/happypeter/big-demo/master/posts/${this.props.params.title}.md?v=${Math.random()}`
     axios.get(address).then((res) => {
       this.setState({
         rawContent: res.data
