@@ -10,3 +10,10 @@
 git init
 git add -A
 git commit -a -m"first commit"
+
+
+
+import React, { Component } from 'react';
+import {hashHistory} from 'react-router';
+
+class BlogCard extends Component {
