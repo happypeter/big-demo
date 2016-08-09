@@ -86,3 +86,8 @@ h1 {
 .account .user-repos li  .lang {
   font-size: 14px;
 }
+.account h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #212121;
+}

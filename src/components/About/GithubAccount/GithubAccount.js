@@ -31,6 +31,7 @@ class GithubAccount extends Component {
     if(!isEmpty(this.state.user)) {
       GitHubInfo = (
         <div>
+          <h1> My Github Info </h1>
           <UserInfo userInfo={this.state.user} />
           <Repos repos={this.state.repos} />
         </div>
