@@ -1,5 +1,6 @@
 import React from 'react';
 import echarts from 'echarts';
+import Card from 'material-ui/Card';
 
 class Echart extends React.Component {
   componentDidMount(){
@@ -57,7 +58,11 @@ class Echart extends React.Component {
   }
   render () {
     return(
-      <div id='main' style={{width:'100%',height:'50vw',maxHeight:'400px'}}></div>
+      <div className='account'>
+        <Card className="content">
+          <div id='main' style={{width:'100%',height:'50vw',maxHeight:'400px'}}></div>
+        </Card>
+      </div>
     )
   }
 }
