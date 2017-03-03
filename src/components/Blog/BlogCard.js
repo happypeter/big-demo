@@ -3,7 +3,7 @@ import {hashHistory} from 'react-router';
 
 class BlogCard extends Component {
   handleClick(){
-    this.context.router.push(`blog/${this.props.url}`);
+    this.context.router.push(`/big-demo/blog/${this.props.url}`);
   }
   render(){
     // console.log(this.context.router);
