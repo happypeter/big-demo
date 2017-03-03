@@ -27,9 +27,9 @@ class AppLeftNav extends React.Component {
   }
   setNavState(){
     this.setState({
-      title:this.context.router.isActive('/', true) ? 'HOME' :
-        this.context.router.isActive('/blog')? 'BLOG' :
-        this.context.router.isActive('/about')? 'ABOUT' : 'ITEM'
+      title:this.context.router.isActive('/blog-demo', true) ? 'HOME' :
+        this.context.router.isActive('/blog-demo/blog')? 'BLOG' :
+        this.context.router.isActive('/blog-demo/about')? 'ABOUT' : 'ITEM'
     });
   }
   render() {
@@ -73,13 +73,13 @@ class AppLeftNav extends React.Component {
           <div style={styles.menu}>
             <p style={styles.navTitle} onClick={this.handleClose.bind(this)}>{this.state.title}</p>
             <MenuItem onTouchTap={this.handleClose.bind(this)}>
-              <Link to="/" style={styles.link} activeStyle={{color: '#E91E63'}} onlyActiveOnIndex={true}>首页</Link>
+              <Link to="/big-demo" style={styles.link} activeStyle={{color: '#E91E63'}} onlyActiveOnIndex={true}>首页</Link>
             </MenuItem>
             <MenuItem onTouchTap={this.handleClose.bind(this)}>
-              <Link to="blog" style={styles.link} activeStyle={{color: '#E91E63'}}>博客</Link>
+              <Link to="/big-demo/blog" style={styles.link} activeStyle={{color: '#E91E63'}}>博客</Link>
             </MenuItem>
             <MenuItem onTouchTap={this.handleClose.bind(this)}>
-              <Link to="about" style={styles.link} activeStyle={{color: '#E91E63'}}>关于</Link>
+              <Link to="/big-demo/about" style={styles.link} activeStyle={{color: '#E91E63'}}>关于</Link>
             </MenuItem>
           </div>
         </Drawer>

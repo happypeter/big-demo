@@ -42,7 +42,7 @@ class Blog extends Component {
     );
     return(
       <div>
-        {this.state.wait ? <div style={styles.circle}><CircularProgress size={1.5} /></div> : ''}
+        {this.state.wait ? <div style={styles.circle}><CircularProgress size={60} /></div> : ''}
         {blogCards}
       </div>
     )

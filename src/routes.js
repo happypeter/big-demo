@@ -8,7 +8,7 @@ import Blog from './components/Blog/Blog';
 import Post from './components/Blog/Post';
 
 export default (
-  <Route path="/" component={App}>
+  <Route path="/big-demo" component={App}>
     <IndexRoute component={Home} />
     <Route path="about" component={About} />
     <Route path="blog" component={Blog} />
